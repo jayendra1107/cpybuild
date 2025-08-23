@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cpybuild"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python build tool that transpiles Python code to C using Cython. Inspired by Maven/Gulp, but for Python."
 readme = "README.md"
 authors = [
