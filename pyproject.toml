@@ -1,4 +1,6 @@
 
+[project.scripts]
+cpybuild = "cpybuild.cli:main"
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
