@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - 'v*.*.*'
-      
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
           python -m build
       - name: Publish package to PyPI
         env:
-          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
           twine upload dist/*
