@@ -1,3 +1,23 @@
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpybuild"
+version = "0.1.0"
+description = "A Python build tool that transpiles Python code to C using Cython. Inspired by Maven/Gulp, but for Python."
+readme = "README.md"
+authors = [
+	{ name = "jayendra1107" }
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+dependencies = [
+	"pyyaml",
+	"cython",
+	"setuptools",
+	"wheel"
+]
+
+
