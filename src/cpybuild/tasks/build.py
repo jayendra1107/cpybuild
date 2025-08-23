@@ -19,9 +19,11 @@ def run() -> None:
     import sys
     output_dir: str = os.environ.get('CPYBUILD_LOC', config.get('output', 'build/'))
     os.makedirs(output_dir, exist_ok=True)
-    # Add output_dir to sys.path for importing built modules
+    # Always add output_dir to sys.path and PYTHONPATH for importing built modules
     if output_dir not in sys.path:
         sys.path.insert(0, output_dir)
+    # Set PYTHONPATH for subprocesses and user shells
+    os.environ['PYTHONPATH'] = output_dir + (':' + os.environ['PYTHONPATH'] if 'PYTHONPATH' in os.environ else '')
 
     extensions: list[Extension] = []
     for src in sources:
