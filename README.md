@@ -12,7 +12,7 @@
 ## Installation
 
 ```sh
-pip install .
+pip install cpybuild
 ```
 
 ## Quick Start
