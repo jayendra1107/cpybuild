@@ -1,13 +1,18 @@
+import yaml
+import glob
+import os
+from Cython.Build import cythonize
+from setuptools import Extension, setup
+import sys
+import re
+import tempfile
+
 def run() -> None:
     """
     Build task: Transpile Python files to C using Cython and setuptools.
     Collects all source files, creates Extension objects, and calls cythonize once.
     """
-    import yaml
-    import glob
-    import os
-    from Cython.Build import cythonize
-    from setuptools import Extension
+
 
     print('Building project (Python to C)...')
     # Load config with error handling
@@ -17,13 +22,6 @@ def run() -> None:
     try:
         with open('cpybuild.yaml') as f:
             config = yaml.safe_load(f)
-    import yaml
-    import glob
-    import os
-    import sys
-    import re
-    from Cython.Build import cythonize
-    from setuptools import Extension
 
     __all__ = ["run", "is_valid_identifier", "check_module_parts"]
 
@@ -78,10 +76,6 @@ def run() -> None:
             for part in invalids:
                 print(f"    Invalid part: '{part}' (must use only letters, numbers, and underscores, and not start with a digit)")
         print("\nPlease rename these files/folders to valid Python identifiers.")
-
-    import tempfile
-    from setuptools import setup
-    from Cython.Build import cythonize
 
     if extensions:
         try:
